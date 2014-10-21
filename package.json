@@ -1,0 +1,39 @@
+{
+  "name": "worklight_adapter",
+  "config": {
+     "protocol" : "http",
+     "domain": "localhost",
+     "port": "10080",
+     "contextRoot":"/worklight"
+  },
+  "version": "0.0.1",
+  "description": "Extension of request.js to invoke worklight adapters. Used in conjunction with Mocha can provide a powerful mechanism for testing Adapters",
+  "main": "invoke.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/springdo/WorklightAdapter.git"
+  },
+   "dependencies": {
+    "when": "*",
+    "request": "*",
+    "merge" : "*"
+  },
+   "devDependencies": {
+    "mocha": "*",
+    "chai" : "*"
+  },
+  "keywords": [
+    "Worklight",
+    "Adapters",
+    "Testing"
+  ],
+  "author": "Donal Spring",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/springdo/WorklightAdapter/issues"
+  },
+  "homepage": "https://github.com/springdo/WorklightAdapter"
+}
