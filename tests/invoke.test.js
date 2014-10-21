@@ -1,7 +1,6 @@
 var wl = require('worklight_adapter');
 var expect = require('chai').expect;
 
-var adapterOptions= {};
 
 var request = {
     "adapter": "NameOfAdapter",
@@ -16,7 +15,7 @@ var options = {
 var login = {
     "adapter": "SecuredAdapter",
     "procedure": "login",
-    "param": [adapterOptions, "email@madeup.com","password"]
+    "param": ["email@madeup.com","password"]
 }
 
 
