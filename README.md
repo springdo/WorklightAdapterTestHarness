@@ -15,7 +15,7 @@ To configure the worklight server endpoint change the variables in `invoke.js`:
     ^ These are the defaults
 
 or 
-use npm config to define the variables (*note*: this feature is not working at the moment):
+use npm config to define the variables (*note*: this feature is not working at the moment - see issue #2):
 
     npm config set worklight_adapter:protocol=http
     npm config set worklight_adapter:port=10080
