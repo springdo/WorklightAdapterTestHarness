@@ -13,19 +13,19 @@ var _prepareUrl = function(adapter, options) {
         console.log("\n_prepareUrl :: options "+ JSON.stringify(options));
     }
     // TODO fix hard coded URL endpoints here for testing
-    
+
     var protocol = process.env.npm_package_config_protocol;
-	var domain = process.env.npm_package_config_domain;
-	var port = process.env.npm_package_config_port;
-	var context = process.env.npm_package_config_contextRoot;
+    var domain = process.env.npm_package_config_domain;
+    var port = process.env.npm_package_config_port;
+    var context = process.env.npm_package_config_contextRoot;
 
     protocol = "http";
-	domain = "localhost";
-	port = "9080";
-	context = "/worklight";
+    domain = "localhost";
+    port = "9080";
+    context = "/worklight";
 
-	var baseUrl = protocol + "://" + domain + ":" + port + context;
-	var address = baseUrl + "/invoke?adapter=%ADAPTERNAME%&procedure=%PROCEDURENAME%&parameters=%PARAMETERS%";
+    var baseUrl = protocol + "://" + domain + ":" + port + context;
+    var address = baseUrl + "/invoke?adapter=%ADAPTERNAME%&procedure=%PROCEDURENAME%&parameters=%PARAMETERS%";
 
     var encodedParam = encodeURIComponent(JSON.stringify(adapter.param));
     address = baseUrl + "/invoke?adapter="+adapter.adapter+"&procedure="+adapter.procedure+"&parameters="+encodedParam;
@@ -59,7 +59,7 @@ var invoke = function (adapter, options) {
     var url = _prepareUrl(adapter, options);
 
     _XSS(url).then(_makeRequest).then(function(payload){
-    // _XSS(url).then(function(payload){
+        // _XSS(url).then(function(payload){
         if(options.debug) {
             console.log("\ninvoke :: payload is "+ JSON.stringify(payload));
         }     
@@ -87,11 +87,11 @@ var _XSS = function (url) {
 
     // WL-Instance-Id has to be taken from request if one exists and added to the headers for future requests
     request.get(url, function(error, response, data){
-		if (url.debug){
+        if (url.debug){
             console.log("\n_XSS :: request.get error "+ JSON.stringify(error));
             console.log("\n_XSS :: request.get response "+ JSON.stringify(response));
             // console.log("\n_XSS :: request.get data"+ JSON.stringify(data));
-		}
+        }
         // step 1 parse the response to grab the WL-Instance-Id
         if (!error){
             // remove the /*-secure-\n rubbish
