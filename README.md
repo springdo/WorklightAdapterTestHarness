@@ -3,7 +3,7 @@ Worklight Adapter Test Harness
 
 This Node.JS module provides a method to invoke Worklight adapters from a node script
 
-When used in conjunction with [Mocha](http://visionmedia.github.io/mocha/) and [Chai](http://chaijs.com/) this module provides a promise based framework for invoking Worklight adapters. Requests can be chained together and Authenticated Adapters can be invoked using this chaining.
+When used in conjunction with [Mocha](http://mochajs.org/) and [Chai](http://chaijs.com/) this module provides a promise based framework for invoking Worklight adapters. Requests can be chained together and Authenticated Adapters can be invoked using this chaining.
 
 To configure the worklight server endpoint change the variables in `invoke.js`:
 
